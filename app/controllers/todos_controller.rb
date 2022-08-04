@@ -17,7 +17,7 @@ class TodosController < ApplicationController
     def update
         @todo = Todo.find(params[:id])
         @todo.update(
-            title: params[:title]
+            title: params[:title],
             completed: params[:completed]
         )
         render json: @todo
