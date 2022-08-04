@@ -24,9 +24,7 @@ class TodosController < ApplicationController
     end
 
     def destroy
-        @todos = Todo.all
-        @todo = Todo.find(params[:id])
-        @todo.destroy
-        render json: @todos
+        Todo.find(params[:id]).destroy
+        render json: Todo.all
     end
 end
